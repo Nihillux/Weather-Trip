@@ -9,12 +9,6 @@ header {
     width: 80%;
 }
 
-@media only screen and (max-width: 500px) {
-    section {
-        width: 100%;
-    }
-}
-
 #print{
     height: fit-content;
     width: fit-content;
@@ -30,4 +24,16 @@ header {
 
 #intro{
     width: 80%;
+}
+
+@media(max-width: 768px) {
+    section {
+        width: 90%;
+    }
+}
+
+@media(max-width: 420px) {
+    section {
+        width: 95%;
+    }
 }

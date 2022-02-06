@@ -1,5 +1,5 @@
 form {
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 40px;
 }
 
@@ -48,9 +48,17 @@ span{
     cursor: pointer;
 }
 
-@media only screen and (max-width: 500px) {
+@media(max-width: 768px) {
     span{
         font-size: 12px;
         font-weight: 800;
+    }
+}
+
+@media(max-width: 420px) {
+    span{
+        font-size: 12px;
+        font-weight: 800;
+        width: 35%;
     }
 }

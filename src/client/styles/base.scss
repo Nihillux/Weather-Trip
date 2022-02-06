@@ -73,7 +73,7 @@ button{
     border-radius: 10px;
 }
 
-@media only screen and (max-width: 500px) {
+@media(max-width: 768px) {
     section {
         width: 100%;
     }
@@ -85,5 +85,8 @@ button{
         padding-left: 0;
         padding-top: 20px;
         width: fit-content;
+    }
+    div{
+        font-size: 12px;
     }
 }
