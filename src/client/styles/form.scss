@@ -30,3 +30,27 @@ span{
     right: 0px;
     font-weight: 1500;
 }
+
+#clear:hover {
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+}
+
+#generate{
+    padding: 10px 20px;
+    margin-top: 15px;
+}
+
+#generate:hover {
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+    span{
+        font-size: 12px;
+        font-weight: 800;
+    }
+}

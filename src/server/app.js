@@ -35,7 +35,8 @@ app.get('/test', function (req, res) {
 
 app.post('/postData', postData);
 
-//async function to make the 3 API calls
+// async function to make the 3 API calls, add desired values to properties inside ProjectData,
+// and send it back to the client side
 async function postData(req, res) {
   let city = req.body.City;
   let d = new Date(req.body.Date);

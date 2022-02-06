@@ -43,7 +43,6 @@ section, form{
 }
 
 h1 {
-    grid-area: hd;
     font-size: 60px;
     font-weight: 1000;
     text-align: left;
@@ -74,7 +73,17 @@ button{
     border-radius: 10px;
 }
 
-#generate{
-    padding: 10px 20px;
-    margin-top: 15px;
+@media only screen and (max-width: 500px) {
+    section {
+        width: 100%;
+    }
+    h1{
+        font-size: 30px;
+        font-weight: 850;
+        text-align: left;
+        box-sizing: border-box;
+        padding-left: 0;
+        padding-top: 20px;
+        width: fit-content;
+    }
 }
