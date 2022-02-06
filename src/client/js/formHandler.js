@@ -27,13 +27,13 @@ async function updateUi(e) {
       console.log(allData);
       if(city.value.length < 1){
         pic.innerHTML = `<img src="${allData.img}" alt="City Img">`;
-        weather.innerHTML = ` You'll arrive in Narnia in less than twelve parsecs!
+        weather.innerHTML = ` You'll arrive to Narnia in less than twelve parsecs!
         <br>${allData.weather} is waiting for you
         <br><img src="https://www.weatherbit.io/static/img/icons/${allData.icon}.png" alt="weather icon">`;
         error.innerHTML = `Please introduce a valid city and date.`;
       }else{
         pic.innerHTML = `<img src="${allData.img}" alt="City Img">`;
-        weather.innerHTML = ` You'll arrive in ${allData.place} in ${allData.daysDiff} days
+        weather.innerHTML = ` You'll arrive to ${allData.place} in ${allData.daysDiff} days
         <br>${allData.weather} is waiting for you
         <br><img src="https://www.weatherbit.io/static/img/icons/${allData.icon}.png" alt="weather icon">
         <br>Temperature will be ${allData.temp} &#176C`;

@@ -25,14 +25,17 @@ Next I declared my API keys, which will look something like this:
 const pixabayKey = process.env.pixabayKey;
 const weatherKey = process.env.weatherKey;
 const geoname = process.env.geoname;
-});
+
 ```
 - [ ] Use npm or yarn to install the dotenv package ```npm install dotenv```. This will allow us to use environment variables we set in a new file
 - [ ] Create a new ```.env``` file in the root of your project
 - [ ] Go to your .gitignore file and add ```.env``` - this will make sure that we don't push our environment variables to Github! If you forget this step, all of the work we did to protect our API keys was pointless.
 - [ ] Fill the .env file with your API keys like this:
 ```
-API_KEY=**************************
+pixabayKey=**************************
+weatherKey=**************************
+geoname=**************************
+
 ```
 - [ ] Add this code to the very top of your server/index.js file:
 ```

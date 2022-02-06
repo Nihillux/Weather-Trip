@@ -1,5 +1,5 @@
 {
-  "name": "travelapp",
+  "name": "weathertrip",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
     "form-data": "^4.0.0",
     "node-fetch": "^2.3.0",
     "request": "^2.88.2",
+    "supertest": "^6.2.2",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5",
     "workbox-webpack-plugin": "^5.1.3"
