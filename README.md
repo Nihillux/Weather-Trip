@@ -1,6 +1,6 @@
 # Project Instructions
 
-This repo the code for the project on NLP: Webpack, Webpack's loaders and plugins, an API call masking our personal key through .env and making the request from out server, service workers, and Jest tests.
+This repo is the code for the project on NLP: Webpack, Webpack's loaders and plugins, 3 API calls masking our personal key through .env and making the request from my server, service workers, and Jest tests.
 
 The goal of this project is to practice with:
 - Setting up Webpack
@@ -12,33 +12,21 @@ The goal of this project is to practice with:
 
 NLPs leverage machine learning and deep learning create a program that can interpret natural human speech. Systems like Alexa, Google Assistant, and many voice interaction programs are well known to us, but understanding human speech is an incredibly difficult task and requires a lot of resources to achieve.
 
-## Getting started
-
-It would probably be good to first get your basic project setup and functioning. Follow the steps from the course up to Lesson 4 but don't add Service Workers just yet. We won't need the service workers during development and having extra caches floating around just means there's more potential for confusion. So, fork this repo and begin your project setup.
-
-Remember that once you clone, you will still need to install everything:
-
-`cd` into your new folder and run:
-- `npm install`
-
-## Setting up the API
-
-The meaningCloud API is perhaps different than what you've used before. It has you install a node module to run certain commands through, it will simplify the requests we need to make from our node/express backend.
-
 ### Step 1: Signup for an API key
-First, you will need to go [here](https://www.meaningcloud.com/developer/login). Signing up will get you an API key. Don't worry, at the time of this course, the API is free to use up to 1000 requests per day or 333 intensive requests. It is free to check how many requests you have remaining for the day.
+First, I got 3 the keys for the 3 APIs we are going to use:
+
+[Geonames](http://www.geonames.org/export/web-services.html).
+[Weatherbit](https://www.weatherbit.io/account/create).
+[Pixabay](https://pixabay.com/api/docs/).
 
 ### Step 2: Environment Variables
-Next we need to declare our API keys, which will look something like this:
+Next I declared my API keys, which will look something like this:
 ```
-// set meaningCloud API credentias
-var textapi = new meaningCloud({
-  application_key: "your-key"
+const pixabayKey = process.env.pixabayKey;
+const weatherKey = process.env.weatherKey;
+const geoname = process.env.geoname;
 });
 ```
-
-...but there's a problem with this. We are about to put our personal API keys into a file, but when we push, this file is going to be available PUBLICLY on Github. Private keys, visible publicly are never a good thing. So, we have to figure out a way to make that not happen. The way we will do that is with environment variables. Environment variables are pretty much like normal variables in that they have a name and hold a value, but these variables only belong to your system and won't be visible when you push to a different environment like Github.
-
 - [ ] Use npm or yarn to install the dotenv package ```npm install dotenv```. This will allow us to use environment variables we set in a new file
 - [ ] Create a new ```.env``` file in the root of your project
 - [ ] Go to your .gitignore file and add ```.env``` - this will make sure that we don't push our environment variables to Github! If you forget this step, all of the work we did to protect our API keys was pointless.
@@ -56,25 +44,22 @@ dotenv.config();
 console.log(`Your API key is ${process.env.API_KEY}`);
 ```
 ...Not that you would want to do that. This means that our updated API credential settings will look like this:
-```javascript
-// set meaningCloud API credentials
 
-var textapi = new meaningCloud({
-  application_key: process.env.API_KEY
-});
-```
+### Step 3: Using the APIs
 
-### Step 3: Using the API
+We send the name of a city to [Geonames](http://www.geonames.org/export/web-services.html). From it we get the latitud and longitud from that city to send to [Weatherbit](https://www.weatherbit.io/account/create). This API returns the forecast for the next 15 days. And lastly we get a relevant image from [Pixabay](https://pixabay.com/api/docs/). stock to illustrate the city.
 
-We're ready to go! The API has a lot of different endpoints you can take a look at [here](https://www.meaningcloud.com/developer/apis). And you can see how using the SDK simplifies the requests we need to make. 
+## After the APIs
 
-I won't provide further examples here, as it's up to you to create the various requests and make sure your server is set up appropriately.
-
-## After the meaningCloud API
-
-Once you are hooked up to the meaningCloud API, you are most of the way there! Along with making sure you are following all the requirements in the project rubric in the classroom, here are a few other steps to make sure you take.
+Once I hooked up to the 3 APIs, you are most of the way there! Along with making sure you are following all the requirements in the project rubric in the classroom, here are a few other steps to make sure you take.
 
 - Parse the response body to dynamically fill content on the page.
-- Test that the server and form submission work, making sure to also handle error responses if the user input does not match API requirements. 
-- Go back to the web pack config and add the setup for service workers.  
-- Test that the site is now available even when you stop your local server 
+- Test that the server and form submission work, making sure to also handle error responses if the user input does not match API requirements.
+- Updated the CSS to fit my needs.
+- Go back to the webpack config and add the setup for service workers.
+- Test that the site is now available even when you stop your local server.
+
+## Extra functionalities
+
+- Option to print to PDF.
+- Button to clear current data.
