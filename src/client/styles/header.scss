@@ -1,0 +1,21 @@
+header {
+    justify-content: space-between;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: row;
+    margin: 15px auto;
+    width: 80%;
+}
+
+#print{
+    height: fit-content;
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 150px 0 0 0;
+}
+
+#intro{
+    width: 80%;
+}
